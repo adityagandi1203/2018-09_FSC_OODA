@@ -11,6 +11,9 @@ package HW1;
 /**
  * Guitar contains the information needed to keep track of a type of guitar from
  * Rick's music store
+ * 01392300 Aditya
+ * @01392295 Nikhil
+ * @01390645 Raghunandan
  * 
  * @author HeadFirstOODA
  *
@@ -34,7 +37,7 @@ public class Guitar {
 			String topWood) {
 		this.serialNumber = serialNumber;
 		this.price = price;
-		this.manufacturer = manufacturer;
+		this.manufacturer= manufacturer;
 		this.model = model;
 		this.type = type;
 		this.backWood = backWood;
@@ -84,14 +87,14 @@ public class Guitar {
 	 * @return
 	 */
 	public String getType() {
-		return type;
+		return type.toLowerCase();
 	}
 
 	/**
 	 * Returns the type of wood used in the body
 	 */
 	public String getBackWood() {
-		return backWood;
+		return backWood.toLowerCase();
 	}
 
 	/**
@@ -136,4 +139,7 @@ public class Guitar {
 	 * Rick's price for the guitar
 	 */
 	private double price;
+
+	
 }
+
