@@ -1,5 +1,4 @@
-/**
- * Class: Object-Oriented Design and Analysis
+Class: Object-Oriented Design and Analysis
  * Professor: Orlando Montalvo
  * Assignment: HW 1
  * 
@@ -142,4 +141,5 @@ public class Guitar {
 
 	
 }
+
 
