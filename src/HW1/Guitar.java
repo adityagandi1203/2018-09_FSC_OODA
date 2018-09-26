@@ -1,145 +1,69 @@
-Class: Object-Oriented Design and Analysis
- * Professor: Orlando Montalvo
- * Assignment: HW 1
- * 
- * Date: 2018-09-03
- */
-
 package HW1;
-
 /**
- * Guitar contains the information needed to keep track of a type of guitar from
- * Rick's music store
+ * @subject:OOAD
+ * @author:orlando
+ * @version:1.1
  * 01392300 Aditya
  * @01392295 Nikhil
  * @01390645 Raghunandan
- * 
- * @author HeadFirstOODA
- *
  */
-public class Guitar {
 
-	/**
-	 * Full constructor
-	 * 
-	 * @param serialNumber manufacturer serial number
-	 * @param price store price
-	 * @param manufacturer the guitar's manufacturer
-	 * @param model the manufacturers model
-	 * @param type guitar type (electric/accoustic)
-	 * @param backWood the wood used for the guitar body
-	 * @param topWood the wood used for the guitar's face
-	 */
-	public Guitar(String serialNumber, double price, 
-			String manufacturer, String model, 
-			String type, String backWood,
-			String topWood) {
-		this.serialNumber = serialNumber;
-		this.price = price;
-		this.manufacturer= manufacturer;
-		this.model = model;
-		this.type = type;
-		this.backWood = backWood;
-		this.topWood = topWood;
-	}
 
-	/**
-	 * Returns the manufacturer serial number
-	 * 
-	 * NB: Gets and sets do not need @params or @returns because they do one thing which
-	 * is already in the comment
-	 */
-	public String getSerialNumber() {
-		return serialNumber;
-	}
-
-	/**
-	 * Returns store price of guitar
-	 */
-	public double getPrice() {
-		return price;
-	}
-
-	/**
-	 * Sets the store price of the guitar
-	 */
-	public void setPrice(double newPrice) {
-		this.price = newPrice;
-	}
-
-	/**
-	 * Returns the name of the manufacturer
-	 */
-	public String getManufacturer() {
-		return this.manufacturer;
-	}
-
-	/**
-	 * Returns the manufacturer model
-	 */
-	public String getModel() {
-		return model;
-	}
-
-	/**
-	 * Returns the guitar type
-	 * @return
-	 */
-	public String getType() {
-		return type.toLowerCase();
-	}
-
-	/**
-	 * Returns the type of wood used in the body
-	 */
-	public String getBackWood() {
-		return backWood.toLowerCase();
-	}
-
-	/**
-	 * Returns the type of wood used in the face
-	 * @return
-	 */
-	public String getTopWood() {
-		return topWood;
-	}
-
-	/**
-	 * The guitars manufacturer serial number
-	 */
-	private String serialNumber;
-
-	/**
-	 * The name of the manufacturer
-	 */
-	private String manufacturer;
-
-	/**
-	 * The manufacturer model number
-	 */
+public class GuitarSpec
+{
 	private String model;
-
-	/**
-	 * The guitar type (electric/acoustic)
-	 */
-	private String type;
-
-	/**
-	 * The wood used for the back of the guitar
-	 */
-	private String backWood;
-
-	/**
-	 * The wood used for the face of the guitar
-	 */
-	private String topWood;
-
-	/**
-	 * Rick's price for the guitar
-	 */
-	private double price;
-
 	
+	private Manufacturer manufacturer; 
+	private Type type;
+	private Wood backwood;
+	private Wood topwood;
+	public GuitarSpec(Manufacturer manufacturer,String model, Type type,Wood backwood,Wood topwood)
+	{
+		this.manufacturer=manufacturer;
+		this.type=type;
+		this.backwood=backwood;
+		this.topwood=topwood;
+		this.model=model;
+		
+	}
+	
+	
+	public Boolean Match(GuitarSpec g)
+	{
+		if((manufacturer==g.manufacturer)||(type==g.type)||(backwood==g.backwood)||(topwood==g.topwood)||(model.toLowerCase().equals(g.model.toLowerCase())))
+		
+		return true;
+		else
+		return false;
+		
+	}
+	public Manufacturer getManufacturer()
+	{
+		return manufacturer;
+		
+	}
+	public Type getType()
+	{
+		return type;
+		
+	}
+	public Wood getbackwood()
+	{
+		return backwood;
+		
+	}
+	public Wood getTopwood()
+	{
+		return topwood;
+		
+	}
+	public String getModel()
+	{
+		return model;
+		
+	}
+
 }
+
 
 
