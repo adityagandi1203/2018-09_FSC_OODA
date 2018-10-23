@@ -1,13 +1,12 @@
-package HW1;
-/**
- * @subject:OOAD
- * @author:orlando
- * @version:1.1
- * 01392300 Aditya
- * @01392295 Nikhil
- * @01390645 Raghunandan
- */
-
+package HW1.edu.fitchburgstate.csc7400;
+/* @subject:OOAD
+* @author:orlando
+* @version:1.1
+* Students:@1392300 Aditya
+* 			@01392295 Nikhil
+* 			@01390645 Raghunandan
+*/
+/*this class return the type of wood this is a common enum for topwood and backwood*/
 
 public enum Wood {
 	
@@ -20,7 +19,7 @@ public enum Wood {
 	Adirondack,
 	Alder,
 	Sitka;
-	public String toString()
+	public String toString()/*override tostring to return the wood type*/
 	{
 		switch(this)
 		{
