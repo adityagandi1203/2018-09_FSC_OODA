@@ -1,14 +1,12 @@
-package HW1;
-/**
- * @subject:OOAD
- * @author:orlando
- * @version:1.1
- * 01392300 Aditya
- * @01392295 Nikhil
- * @01390645 Raghunandan
- */
-
-
+package HW1.edu.fitchburgstate.csc7400;
+/* @subject:OOAD
+* @author:orlando
+* @version:1.1
+* Students:@1392300 Aditya
+* 			@01392295 Nikhil
+* 			@01390645 Raghunandan
+*/
+/*This class store some values of the  manufacturer */
 public enum Manufacturer {
 
 	Fender,
@@ -18,6 +16,7 @@ public enum Manufacturer {
 	Olson,
 	Ryan,
 	PRS;
+	/*return the enum  values*/
 	public String toString()
 	{
 		switch(this)
