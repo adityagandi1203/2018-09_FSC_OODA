@@ -1,25 +1,27 @@
-package HW1;
-/**
- * @subject:OOAD
+package HW1.edu.fitchburgstate.csc7400;
+/*
+ /* @subject:OOAD
  * @author:orlando
  * @version:1.1
- * 01392300 Aditya
- * @01392295 Nikhil
- * @01390645 Raghunandan
+ * Students:@1392300 Aditya
+ * 			@01392295 Nikhil
+ * 			@01390645 Raghunandan
  */
-
+/*This class interact with guitar spec and inventory to provide best matching guitars*/
 
 import java.util.Iterator;
 import java.util.List;
 
 
-
+/*This method take the input from customer based on user input it searches the inventory and 
+ * get all the matching records and displays to customer */
 public class FindGuitarTester {
 
 	public static void main(String[] args) {
 		// Set up Rick's guitar inventory
 		Inventory inventory = new Inventory();
 		initializeInventory(inventory);
+		
 		GuitarSpec erinspec=new GuitarSpec(Manufacturer.Fender,"Stratocaster",Type.Electric,Wood.Alder,Wood.Alder);
 		Guitar whatErinLikes = new Guitar("", 1499.95, erinspec);
 
@@ -43,6 +45,11 @@ public class FindGuitarTester {
 				System.out.println("Sorry, Erin, we have nothing for you.");
 			}
 		}
+	/*@param inventory object
+	 * it intializes all the guitars below.
+	 * 
+	 * */
+	
 		
 
 		private static void initializeInventory(Inventory inventory) {
@@ -69,12 +76,6 @@ public class FindGuitarTester {
 					Wood.Cocobolo, Wood.Cedar));
 			inventory.addGuitar("6 2958",2100.95, new GuitarSpec (Manufacturer.PRS, "Dave Navarro Signature", Type.Electric,
 					Wood.Mahogany, Wood.Maple));
-
-
-
-
-
-
 
 		}
 	}
