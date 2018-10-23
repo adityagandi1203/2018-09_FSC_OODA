@@ -1,21 +1,17 @@
-/**
- * Class: Object-Oriented Design and Analysis
- * Professor: Orlando Montalvo
- * Assignment: HW 1
- * 
- * Date: 2018-09-03
- */
 
-package HW1;
 
-/**
- * @subject:OOAD
+package HW1.edu.fitchburgstate.csc7400;
+
+/* @subject:OOAD
  * @author:orlando
  * @version:1.1
- * 01392300 Aditya
- * @01392295 Nikhil
- * @01390645 Raghunandan
+ * Students:@1392300 Aditya
+ * 			@01392295 Nikhil
+ * 			@01390645 Raghunandan
  */
+/*This class contain the information of ricks store it store like price,serial no and
+ * a guitar spec object which have more info like  type wood model
+ * this all info is used to search guitar */
 
 public class Guitar {
 	private GuitarSpec g;
@@ -31,11 +27,7 @@ public class Guitar {
 		this.serialNumber = serialNumber;
 		this.price = price;
 		this.g=g;
-		/*this.manufacturer= manufacturer;
-		this.model = model;
-		this.type = type;
-		this.backWood = backWood;
-		this.topWood = topWood;*/
+		
 	}
 
 	/**
@@ -140,7 +132,3 @@ public class Guitar {
 	}
 	
 }
-
-
-
-
