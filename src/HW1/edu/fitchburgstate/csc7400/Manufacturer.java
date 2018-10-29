@@ -1,11 +1,11 @@
-package HW1.edu.fitchburgstate.csc7400;
-/* @subject:OOAD
-* @author:orlando
-* @version:1.1
-* Students:@1392300 Aditya
-* 			@01392295 Nikhil
-* 			@01390645 Raghunandan
+/* Class		 : Object-Oriented Design and Analysis
+* Professor  : Orlando Montalvo
+* Assignment : HW 2
+* Students	 : Aditya(@01392300)
+* 			   Nikhil(@01392295)
+*			   Raghunandan(@01390645 )
 */
+package HW1.edu.fitchburgstate.csc7400;
 /*This class store some values of the  manufacturer */
 public enum Manufacturer {
 
