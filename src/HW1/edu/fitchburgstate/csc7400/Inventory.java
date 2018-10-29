@@ -1,85 +1,139 @@
-
-
-
-
-
-
+/* Class		 : Object-Oriented Design and Analysis
+* Professor  : Orlando Montalvo
+* Assignment : HW 1
+* Students	 : Aditya(@01392300)
+* 			       Nikhil(@01392295)
+*			         Raghunandan(@01390645 )
+* Date		: 2018-09-03
+*/
 package HW1.edu.fitchburgstate.csc7400;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-
 /**
- * Inventory  Class keeps a searchable collection of Guitars. It is meant to be use
- * to find matching guitars for customers. 
- * 
- * @author orlando
- * @version 2.0
- * 01392300 Aditya
- * @01392295 Nikhil
- * @01390645 Raghunandan
- */
-public class Inventory {
-  private List<Guitar> guitars = new LinkedList<Guitar>();
-  
-  /*Provide serialNumber,price,builder,model,type,backWood and topWood to add a guitar
-  Adds a new guitar by providing serialNumber,price,builder,model,type,backWood and topWood*/
-  
-  			
+* Guitar contains the information needed to keep track of a type of guitar from
+* Rick's music store
 
-  public void addGuitar(String serialNumber, double price,
-                        String builder, String model,
-                        String type, String backWood, String topWood) 
-  {
-    Guitar guitar = new Guitar(serialNumber, price, builder,
-                               model, type, backWood, topWood);
-    guitars.add(guitar);
-  }
-  public Guitar getGuitar(String serialNumber) {
-    for (Iterator i = guitars.iterator(); i.hasNext(); ) {
-      Guitar guitar = (Guitar)i.next();
-      if (guitar.getSerialNumber().equals(serialNumber)) {
-        return guitar;
-      }
-    }
-    return null;
-  }
-  /*Search by Guitar using Guitar object with parameter(builder,model,type,backWood and topWood) 
-  * the values must be first passed into guitar class and get the guitar object first
-  * @param searchGuitar
-  * @return Guitar or null */
-  
-  public Guitar search(Guitar searchGuitar) 
-  {
-    for (Iterator i = guitars.iterator(); i.hasNext(); ) {
-      Guitar guitar = (Guitar)i.next();
-      // Ignore serial number since that's unique
-      // Ignore price since that's unique
-      String builder = searchGuitar.getManufacturer();
-      if ((builder != null) && (!builder.equals("")) &&
-          (!builder.equalsIgnoreCase(guitar.getManufacturer())))//It compares  manufacturer name with no case sensitivity
-        continue;
-    
-      String model = searchGuitar.getModel();
-      
-      if ((model != null) && (!model.equals("")) &&
-          (!model.equalsIgnoreCase(guitar.getModel())))//It compares model without case sensitivity
-        continue;
-      
-      String type = searchGuitar.getType();
-      if ((type != null) && (!searchGuitar.equals("")) &&
-          (!type.equalsIgnoreCase(guitar.getType())))//It compares the type without the case sensitivity
-        continue;
-      String backWood = searchGuitar.getBackWood();
-      if ((backWood != null) && (!backWood.equals("")) &&
-          (!backWood.equalsIgnoreCase(guitar.getBackWood())))//It compares the backwood ignoring  case
-        continue;
-      String topWood = searchGuitar.getTopWood();
-      if ((topWood != null) && (!topWood.equals("")) &&
-          (!topWood.equalsIgnoreCase(guitar.getTopWood())))//it compares the the topwood ignoring the case
-        continue;
-      return guitar;
-    }
-    return null;
-  }
+*/
+public class Guitar {
+
+	/**
+	 * Full constructor of the guitar when we passed the given value in the guitar constructor we get the guitar object 
+	 * 
+	 * @param serialNumber manufacturer serial number
+	 * @param price store price
+	 * @param manufacturer the guitar's manufacturer
+	 * @param model the manufacturers model
+	 * @param type guitar type (electric/accoustic)
+	 * @param backWood the wood used for the guitar body
+	 * @param topWood the wood used for the guitar's face
+	 */
+	public Guitar(String serialNumber, double price, 
+			String manufacturer, String model, 
+			String type, String backWood,
+			String topWood) {
+		this.serialNumber = serialNumber;
+		this.price = price;
+		this.manufacturer= manufacturer;
+		this.model = model;
+		this.type = type;
+		this.backWood = backWood;
+		this.topWood = topWood;
+	}
+
+	/**
+	 * Returns the manufacturer serial number
+	 * 
+	 * NB: Gets and sets do not need @params or @returns because they do one thing which
+	 * is already in the comment
+	 */
+	public String getSerialNumber() {
+		return serialNumber;
+	}
+
+	/**
+	 * Returns store price of guitar
+	 */
+	public double getPrice() {
+		return price;
+	}
+
+	/**
+	 * Sets the store price of the guitar
+	 */
+	public void setPrice(double newPrice) {
+		this.price = newPrice;
+	}
+
+	/**
+	 * Returns the name of the manufacturer
+	 */
+	public String getManufacturer() {
+		return this.manufacturer;
+	}
+
+	/**
+	 * Returns the manufacturer model
+	 */
+	public String getModel() {
+		return model;
+	}
+
+	/**
+	 * Returns the guitar type
+	 * @return
+	 */
+	public String getType() {
+		return type;
+	}
+
+	/**
+	 * Returns the type of wood used in the body
+	 */
+	public String getBackWood() {
+		return backWood;
+	}
+
+	/**
+	 * Returns the type of wood used in the face
+	 * @return
+	 */
+	public String getTopWood() {
+		return topWood;
+	}
+
+	/**
+	 * The guitars manufacturer serial number
+	 */
+	private String serialNumber;
+
+	/**
+	 * The name of the manufacturer
+	 */
+	private String manufacturer;
+
+	/**
+	 * The manufacturer model number
+	 */
+	private String model;
+
+	/**
+	 * The guitar type (electric/acoustic)
+	 */
+	private String type;
+
+	/**
+	 * The wood used for the back of the guitar
+	 */
+	private String backWood;
+
+	/**
+	 * The wood used for the face of the guitar
+	 */
+	private String topWood;
+
+	/**
+	 * Rick's price for the guitar
+	 */
+	private double price;
+
+
+	
 }
