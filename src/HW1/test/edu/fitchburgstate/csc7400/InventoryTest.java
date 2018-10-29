@@ -1,3 +1,11 @@
+/* Class		 : Object-Oriented Design and Analysis
+* Professor  : Orlando Montalvo
+* Assignment : HW 1
+* Students	 : Aditya(@01392300)
+* 		   Nikhil(@01392295)
+*		   Raghunandan(@01390645 )
+* Date		: 2018-09-03
+*/
 
 package HW1.test.edu.fitchburgstate.csc7400;
 import static org.junit.jupiter.api.Assertions.*;
@@ -9,21 +17,13 @@ import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import HW1.edu.fitchburgstate.csc7400.Guitar;
+import HW1.edu.fitchburgstate.csc7400.Inventory;
 
 import org.junit.jupiter.api.Test;
-
-/* 
- * 
- * Inventory test class contain test to test the methods of inventory class 
-**
-* 
-* @author orlando
-* @version 2.0
-* 01392300 Aditya
-* @01392295 Nikhil
-* @01390645 Raghunandan
-*/
-
+/*Inventory test class test all the methods present in the inventory class it also have
+ * test cases which get results with different inputs.
+ * */
 class InventoryTest {
 	Inventory inventory;
 	private List<Guitar> guitars = new LinkedList<Guitar>();
@@ -54,96 +54,21 @@ class InventoryTest {
 	inventory.addGuitar(test.getSerialNumber(),test.getPrice() , test.getManufacturer(), test.getModel(), test.getType(),test.getBackWood(), test.getTopWood());
 		}
 	@Test
-	void testGetManufacturer() //this test fail  due to the case sensitivity problem
+	/*Testing the inventory by passing guitar with all arguments*/
+	void getDetails()
 	{
-		String expected="fender";
-		String result = "";
-		Iterator i;
-		for ( i = guitars.iterator(); i.hasNext(); ) 
-		{
-			Guitar guitar = (Guitar)i.next();
-			result=guitar.getManufacturer().toString();//here we get "Fender" in result but we have not converted to lower case
-		      
-		}
-		assertEquals(expected, result);
-		
-		
+		Guitar test=new Guitar("76531", 6295.95, "Martin", "OM-28", "acoustic",
+                        "Brazilian Rosewood", "Adriondack");
+		Guitar res=inventory.search(test);
+		assertEquals(test.getSerialNumber(),res.getSerialNumber());
+		assertEquals(test.getPrice(),res.getPrice());
+		assertEquals(test.getManufacturer(),res.getManufacturer());
+		assertEquals(test.getBackWood(),res.getBackWood());
+		assertEquals(test.getTopWood(),res.getTopWood());
+		assertEquals(test.getType(),res.getType());
+		assertEquals(test.getModel(),res.getModel());
 	}
-	@Test
-	void testGetManufacturercasesensitivity()
-	{
-		String expected="fender";
-		String result = "";
-		Iterator i;
-		for ( i = guitars.iterator(); i.hasNext(); ) 
-		{
-			Guitar guitar = (Guitar)i.next();
-			result=guitar.getManufacturer().toString().toLowerCase();//here we get "fender" in result but we have  converted to lower case
-			
-		
-			
-			
-		      
-		}
-		assertEquals(expected, result);
-	}
-	@Test
-	void testGetModel()
-	{
-		String expected="stratocastor".toLowerCase();
-		String result = "";
-		Iterator i;
-		for ( i = guitars.iterator(); i.hasNext(); ) 
-		{
-			Guitar guitar = (Guitar)i.next();
-			result=guitar.getModel().toString().toLowerCase();//dealing with case sensitivity for model
-		      
-		}
-		assertEquals(expected, result);
-	}
-	@Test
-	void testGetType()//to compare type in  the inventory to given type with case sentivity
-	{
-		String expected="electric".toLowerCase();
-		String result = "";
-		Iterator i;
-		for ( i = guitars.iterator(); i.hasNext(); ) 
-		{
-			Guitar guitar = (Guitar)i.next();
-			result=guitar.getType().toString().toLowerCase();
-		      
-		}
-		assertEquals(expected, result);
-	}
-	@Test
-	void testbackWood()
-	{
-		String expected="Alder".toLowerCase();//converting "Alder" to lower case as we are converting comparing element to lower case
-		String result = "";
-		Iterator i;
-		for ( i = guitars.iterator(); i.hasNext(); ) 
-		{
-			Guitar guitar = (Guitar)i.next();
-			result=guitar.getBackWood().toString().toLowerCase();
-		      
-		}
-		assertEquals(expected, result);
-	}
-	@Test
-	void testTopwood()
-	{
-		String expected="Alder".toLowerCase();//converting "Alder" to lower case as we are converting comparing element to lower case
-		String result = "";
-		Iterator i;
-		for ( i = guitars.iterator(); i.hasNext(); ) 
-		{
-			Guitar guitar = (Guitar)i.next();
-			result=guitar.getBackWood().toString().toLowerCase();
-		      
-		}
-		assertEquals(expected, result);
-		
-	}
+	
 	/*when backwood is passed*/
 	@Test
 	void getBackwood()
