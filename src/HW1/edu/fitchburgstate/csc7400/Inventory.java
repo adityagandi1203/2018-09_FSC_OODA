@@ -1,11 +1,11 @@
-package HW1.edu.fitchburgstate.csc7400;
-/* @subject:OOAD
-* @author:orlando
-* @version:1.1
-* Students:@1392300 Aditya
-* 			@01392295 Nikhil
-* 			@01390645 Raghunandan
+/* Class		 : Object-Oriented Design and Analysis
+* Professor  : Orlando Montalvo
+* Assignment : HW 2
+* Students	 : Aditya(@01392300)
+* 		   Nikhil(@01392295)
+*		   Raghunandan(@01390645 )
 */
+package HW1.edu.fitchburgstate.csc7400;
 /*Inventory  Class keeps a searchable collection of Guitars. It is meant to be use
  * to find matching guitars for customers. */
 import java.util.Iterator;
@@ -33,27 +33,44 @@ public class Inventory {
     }
     return null;
   }
-  /*provides the list of the matched guitar by comparing guitarspec */
-	  public List<Guitar> search(Guitar searchGuitar) 
+  /*provides the list of the matched guitar by comparing arguments in guitarsepc
+   * @Param guitarspec object
+   * 
+   * */
+	  public List<Guitar> search(GuitarSpec search) 
 	  {
-			List<Guitar> guitarsList = new LinkedList(); 
+			List<Guitar> guitarslist = new LinkedList(); 
+			for  (Iterator<Guitar> i = guitars.iterator(); i.hasNext(); ) 
+		    {
+			      Guitar guitar = (Guitar)i.next();
+			      GuitarSpec guitarspec = guitar.getGuitarSpec();
+			 
+			      if(search.Match(guitarspec)) 
+			      {
+			    	  	guitarslist.add(guitar);   //If matched, guitar is added to the list
+			      }
+			    }
+			    return guitarslist;
 			
-			for (Iterator i = guitars.iterator(); i.hasNext();) {
-				Guitar guitar = (Guitar) i.next();
-				
-				if (guitar.getGuitarSpec().match(searchGuitar.getGuitarSpec())) //checks the spec
-				{
-					guitarsList.add(guitar);
-				}
-
-				
-				if (guitar.getPrice() == searchGuitar.getPrice()) //checks the price
-				{
-					guitarsList.add(guitar);
-				}
-			}
-			return guitarsList;
     
   }
+	  /*For returning the guitar based on the price we need this method which compares the price of a guitar
+	   * @param guitar object
+	   * */
+	 
+	  public List<Guitar> priceComp(Guitar guitar) 
+	  {
+	  	  List<Guitar> Price = new LinkedList<Guitar>();
+	    for (Iterator<Guitar> i = guitars.iterator(); i.hasNext(); ) 
+	    {
+	      Guitar guitar1 = (Guitar)i.next();
+	      int Result = Double.compare(guitar.getPrice(),guitar1.getPrice()); 
+	      if (Result == 0)             
+	      {
+	      	Price.add(guitar1);    
+	      }
+	    }
+	    return Price;
+	  }
 	  
 }
