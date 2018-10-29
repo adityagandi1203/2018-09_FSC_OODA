@@ -1,11 +1,11 @@
-package HW1.edu.fitchburgstate.csc7400;
-/* @subject:OOAD
-* @author:orlando
-* @version:1.1
-* Students:	@1392300 Aditya
-* 			@01392295 Nikhil
-* 			@01390645 Raghunandan
+/* Class		 : Object-Oriented Design and Analysis
+* Professor  : Orlando Montalvo
+* Assignment : HW 2
+* Students	 : Aditya(@01392300)
+* 	           Nikhil(@01392295)
+*	           Raghunandan(@01390645 )
 */
+package HW1.edu.fitchburgstate.csc7400;
 /*this class contain the test cases to test the methods present in the inventory class*/
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -18,13 +18,6 @@ import org.junit.jupiter.api.Test;
 class InventoryTestAss2 
 
 {
-	
-	
-	@BeforeEach
-	void setUp() throws Exception 
-	{
-		
-	}
 	
 
 	@Test
@@ -67,10 +60,10 @@ class InventoryTestAss2
 		
 		i.addGuitar("70108276", 2295.95,g);
 		
-		Guitar search=new Guitar("70108276", 2295.95,g);
-		List<Guitar> lis=i.search(search);
+		
+		List<Guitar> lis=i.search(g);
 	
-		assertEquals(2,lis.size());//we compared and serched and should get size as 2
+		assertEquals(1,lis.size());//we compared and serched and should get size as 2
 	    
 		
 	}
@@ -88,8 +81,8 @@ class InventoryTestAss2
 		i.addGuitar("82765501", 1890.95,g1);
 		
 		GuitarSpec g3=new GuitarSpec(Manufacturer.Gibson,null,null,null,null);
-		Guitar gut=new Guitar("",0.0,g3);
-		List<Guitar> li= i.search(gut);
+		
+		List<Guitar> li= i.search(g3);
 		assertEquals(2,li.size());
 	}
 	@Test
@@ -106,8 +99,8 @@ class InventoryTestAss2
 		i.addGuitar("82765501", 1890.95,g1);
 		
 		GuitarSpec g3=new GuitarSpec(Manufacturer.Fender,null,null,null,null);
-		Guitar gut=new Guitar("",0.0,g3);
-		List<Guitar> li= i.search(gut);
+		
+		List<Guitar> li= i.search(g3);
 		assertEquals(2,li.size());
 	}
 	@Test
@@ -124,11 +117,11 @@ class InventoryTestAss2
 		i.addGuitar("82765501", 1890.95,g1);
 		
 		GuitarSpec g3=new GuitarSpec(null,null,Type.Electric,null,null);
-		Guitar gut=new Guitar("",0.0,g3);
-		List<Guitar> li= i.search(gut);
+		
+		List<Guitar> li= i.search(g3);
 		assertEquals(2,li.size());
 	}
-	public void searchGuitar4()
+	public void searchGuitar4()//given manufacturer type and wood
 	{
 		
 		Inventory i=new Inventory();
@@ -139,8 +132,8 @@ class InventoryTestAss2
 	
 		
 		GuitarSpec g3=new GuitarSpec(Manufacturer.Fender,"Stratocaster",Type.Electric,Wood.Alder,Wood.Alder);
-		Guitar gut=new Guitar("",0.0,g3);
-		List<Guitar> li= i.search(gut);
+		
+		List<Guitar> li= i.search(g3);
 		assertEquals(1,li.size());
 	}
 	
