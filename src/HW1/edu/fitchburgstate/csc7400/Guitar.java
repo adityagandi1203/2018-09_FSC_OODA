@@ -1,14 +1,13 @@
-
+/* Class		 : Object-Oriented Design and Analysis
+* Professor  : Orlando Montalvo
+* Assignment : HW 2
+* Students	 : Aditya(@01392300)
+* 	           Nikhil(@01392295)
+*	           Raghunandan(@01390645 )
+*/
 
 package HW1.edu.fitchburgstate.csc7400;
 
-/* @subject:OOAD
- * @author:orlando
- * @version:1.1
- * Students:@1392300 Aditya
- * 			@01392295 Nikhil
- * 			@01390645 Raghunandan
- */
 /*This class contain the information of ricks store it store like price,serial no and
  * a guitar spec object which have more info like  type wood model
  * this all info is used to search guitar */
@@ -28,6 +27,11 @@ public class Guitar {
 		this.price = price;
 		this.g=g;
 		
+	}
+/*empty guitar constructor Default
+ * */
+	public Guitar() {
+		// TODO Auto-generated constructor stub
 	}
 
 	/**
