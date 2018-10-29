@@ -1,9 +1,19 @@
+/* Class		 : Object-Oriented Design and Analysis
+* Professor  : Orlando Montalvo
+* Assignment : HW 1
+* Students	 : Aditya(@01392300)
+* 	           Nikhil(@01392295)
+*		   Raghunandan(@01390645 )
+* Date		: 2018-09-03
+*/
 
 package HW1.test.edu.fitchburgstate.csc7400;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import HW1.edu.fitchburgstate.csc7400.Guitar;
 
 
 /*test the guitar class by pulling each parameter of the constructor*/
