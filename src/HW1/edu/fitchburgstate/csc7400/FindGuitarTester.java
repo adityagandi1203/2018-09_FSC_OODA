@@ -1,16 +1,18 @@
+ /* Class		 : Object-Oriented Design and Analysis
+* Professor  : Orlando Montalvo
+* Assignment : HW 1
+* Students	 : Aditya(@01392300)
+* 			       Nikhil(@01392295)
+*			         Raghunandan(@01390645 )
+* Date		: 2018-09-03
+*/
 package HW1.edu.fitchburgstate.csc7400;
-/**
- * This class interact with guitar and inventory class and give the result based on coustomer inputs. 
- * 
- * @author orlando
- * @version 2.0
- * 01392300 Aditya
- * @01392295 Nikhil
- * @01390645 Raghunandan
- */
 /*This method take the input from customer based on user input it searches the inventory and get all the matching records and displays to customer */
 public class FindGuitarTester {
-
+/*
+ * This method displays the result of the searched guitar based on given parameters.
+ * args are not used
+ */
   public static void main(String[] args) {
     // Set up Rick's guitar inventory
     Inventory inventory = new Inventory();
