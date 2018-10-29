@@ -1,11 +1,11 @@
-package HW1.edu.fitchburgstate.csc7400;
-/* @subject:OOAD
-* @author:orlando
-* @version:1.1
-* Students:@1392300 Aditya
-* 			@01392295 Nikhil
-* 			@01390645 Raghunandan
+/* Class		 : Object-Oriented Design and Analysis
+* Professor  : Orlando Montalvo
+* Assignment : HW 2
+* Students	 : Aditya(@01392300)
+* 	           Nikhil(@01392295)
+*		   Raghunandan(@01390645 )
 */
+package HW1.edu.fitchburgstate.csc7400;
 /*This class contain the information of ricks store guitar class contain guitar spec object which contain this class information,
  * 
  *  */
@@ -29,9 +29,9 @@ public class GuitarSpec
 	}
 	/*this method return each guitar with searched guitar guitar*/
 	
-	public Boolean match(GuitarSpec g)
+	public Boolean Match(GuitarSpec g)
 	{
-		return((manufacturer==g.manufacturer)||(type==g.type)||(backwood==g.backwood)||(topwood==g.topwood)||(model.toLowerCase().equals(g.model.toLowerCase())));
+		return((this.manufacturer==g.manufacturer)||(this.type==g.type)||(this.backwood==g.backwood)||(this.topwood==g.topwood)||(this.model.toLowerCase().equals(g.model.toLowerCase())));
 		
 		
 		
