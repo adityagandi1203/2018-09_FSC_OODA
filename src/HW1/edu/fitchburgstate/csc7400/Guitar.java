@@ -1,12 +1,12 @@
-package HW1.edu.fitchburgstate.csc7400;
-/* Class: Object-Oriented Design and Analysis
-* Professor: Orlando Montalvo
-* Assignment: HW 1
-* Students: Aditya(@01392300)
-* 			Nikhil(@01392295)
-*			Raghunandan(@01390645 )
-* Date: 2018-09-03
+/* Class		 : Object-Oriented Design and Analysis
+* Professor  : Orlando Montalvo
+* Assignment : HW 1
+* Students	 : Aditya(@01392300)
+* 		   Nikhil(@01392295)
+*	           Raghunandan(@01390645 )
+* Date		: 2018-09-03
 */
+package HW1.edu.fitchburgstate.csc7400;
 /**
 * Guitar contains the information needed to keep track of a type of guitar from
 * Rick's music store
@@ -133,6 +133,7 @@ public class Guitar {
 	 * Rick's price for the guitar
 	 */
 	private double price;
+
 
 	
 }
